@@ -1,6 +1,7 @@
-# KNOWLEDGE — fortunecrops
+# fortunecrops 原版作物掉落表与实现要点
 
-本文件记录本项目开发中**验证过**的事实（源码/原版数据核对），避免重复查证。
+> 本文原为 `docs/KNOWLEDGE.md`，按 §7 落点表迁入 `docs/reference/`；构建环境坑见 [docs/troubleshooting.md](../troubleshooting.md)。
+> 记录本项目开发中**验证过**的事实（源码/原版数据核对），避免重复查证。
 
 ## 原版作物掉落表（1.21.1，从 `minecraft_1.21.1_client.jar` 提取核对）
 
@@ -26,7 +27,3 @@
 - `javafml` 加载器要求 jar 必须有 `@Mod` 入口类，纯数据 mod 也要保留一个空主类。
 - `random_sequence` 字段覆盖时保留原值（`minecraft:blocks/wheat` 等），指向原表自身的 RNG 序列。
 
-## 构建环境
-
-- 必须 Java 21：`export JAVA_HOME="C:/Users/lzp/scoop/apps/dragonwell21-jdk/current"`（Git Bash）。
-- Gradle 9.2.1 wrapper + ModDevGradle 2.0.143，`./gradlew build` 产物 `build/libs/fortunecrops-1.0.0.jar`。

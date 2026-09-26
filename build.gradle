@@ -35,8 +35,8 @@ base {
     archivesName = mod_id
 }
 
-// Mojang ships Java 21 to end users in 1.21.1, so mods should target Java 21.
-java.toolchain.languageVersion = JavaLanguageVersion.of(21)
+// 编译用 Java 版本由 gradle.properties 的 java_version 决定，与 mc-mod-ci 选择 CI JDK 的来源一致。
+java.toolchain.languageVersion = JavaLanguageVersion.of(project.java_version)
 
 neoForge {
     // Specify the version of NeoForge to use.
